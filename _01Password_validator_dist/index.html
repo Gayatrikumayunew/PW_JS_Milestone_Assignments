@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass_Validator</title>
+    
+  <link rel="stylesheet" href="/assets/index-0fb2efbd.css">
+</head>
+
+<body class=" flex flex-col  items-center justify-center ">
+    <img src="/assets/logo1-86a5b564.svg" alt="" class=" w-32 mt-10">
+    <div class="container bg-gray-300 border-gray-300 border w-1/3 mt-10 px-5 py-6 flex flex-col space-y-2 ">
+        <h3 class="pb-6">Welcome Back!</h3>
+        <label class="text-sm font-medium ">Username</label>
+        <input
+            class=" Username border h-10 bg-white p-4 rounded-sm   transition-all duration-75 ease-in-out hover:border-blue-600  focus:shadow-sm focus:outline-none "
+            type="text">
+        <label class="text-sm font-medium " for="">Password</label>
+        <input
+            class=" pass h-10 bg-white p-4 rounded-sm   transition-all duration-75 ease-in-out hover:border-blue-600  focus:shadow-sm focus:outline-none border"
+            type="password" name="" id="">
+        <p class="text-xs text-blue-500 cursor-pointer hover:underline">I forgot my password</p>
+        <button id="loginButton" class="bg-[#467fcf] py-2 text-white hover:bg-[#4072b9] rounded-sm">Log in</button>
+    </div>
+    <script>
+
+
+        document.getElementById("loginButton").addEventListener("click", function () {
+
+            let a = document.querySelector(".Username").value;
+            let b = document.querySelector(".pass").value;
+             if (a === "Gayu" && b === "gayu123") {
+                console.log("Correct Password");
+
+
+
+            }
+            else if (a === "" || b === "") {
+                console.log("Empty Field")
+            }
+            else {
+                console.log("Incorrect password");
+            }
+        }); 
+    </script>
+
+
+</body>
+
+</html>
