@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    h3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(184, 50, 170);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin-top: 20%;
+    }
+</style>
+</head>
+<!-- as for assignment i made it by switch case but also we can improve it  -->
+
+<body>
+    <h3>Hi! i'm a calculator ,see answer in console </h3>
+    <script>
+        var num1 = prompt("Enter the first number");
+        var num2 = prompt("Enter the second number");
+        var operator = prompt("Select operator");
+        switch (operator) {
+            case "+":
+                var result = parseInt(num1) + parseInt(num2);
+                console.log(result);
+                break;
+            case "-":
+                var result = parseInt(num1) - parseInt(num2);
+                console.log(result);
+                break;
+            case "*":
+                var result = parseInt(num1) * parseInt(num2);
+                console.log(result);
+                break;
+            case "/":
+                var result = parseInt(num1) / parseInt(num2);
+                console.log(result);
+                break;
+            default:
+                console.log("invalid input")
+        }
+        
+    </script>
+</body>
+
+</html>
