@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Color Input</title>
+    
+  <link rel="stylesheet" href="assets/index-c6ca68c1.css">
+</head>
+
+<body >
+   
+    <div class="flex h-screen items-center justify-center  flex-col  ">
+        <h3 class="text-[#FF69B4] font-mono font-bold text-lg">C<span class="text-[red]">o</span><span class="text-yellow-400">l</span><span class="text-red">o</span><span class="text-green-600">r</span> <span class="text-[blue]">M<span class="text-[#FF0090]">i</span><span class="text-gray-700">x</span><span class="text-[#2C041D]">e</span><span class="text-sky-950">r</span></span></h3>
+        <div class="w-full max-w-md p-6 space-y-4 bg-white rounded-lg shadow-lg ">
+            <label for="firstColor" class="block">Enter First color</label>
+            <input class="first-input border rounded w-full px-3 py-2 outline-none" type="text" id="firstColor">
+            <label for="secondColor" class="block">Enter Second color</label>
+            <input class="second-input border rounded w-full outline-none px-3 py-2" type="text" id="secondColor">
+            <div class="btn space-x-8 flex justify-around"> <button class="bg-blue-500 text-white rounded-lg px-4 py-2 hover:bg-blue-600"
+                    onclick="countColors()">Click</button>
+                <button class="bg-blue-500 text-white rounded-lg px-4 py-2 hover:bg-blue-600"
+                    onclick="reset()">Reset</button>
+            </div>
+
+        </div>
+
+
+
+
+        <div id="output" class="text-center font-bold font-serif w-full max-w-md p-6 space-y-4 bg-white rounded-lg shadow-2xl mt-10">
+            Output
+        </div>
+    </div>
+
+    <script>
+        function reset() {
+            let firstColorInput = document.getElementById("firstColor");
+            let secondColorInput = document.getElementById("secondColor");
+
+            firstColorInput.value = "";
+            secondColorInput.value = "";
+            document.getElementById("output").style.backgroundColor = "white";
+            document.getElementById("output").innerText="Output";
+                    
+
+        }
+        function countColors() {
+            let firstColor = document.getElementById("firstColor").value;
+            let secondColor = document.getElementById("secondColor").value;
+            //     if(firstColor=="red" && secondColor=="blue" || firstColor=="blue" && secondColor=="red"){
+            //        document.getElementById("output").style.backgroundColor = "purple";
+
+            //     }
+            //   }
+            switch (`${firstColor}-${secondColor}`) {
+                case "red-blue":
+                case "blue-red":
+                    document.getElementById("output").style.backgroundColor = "purple";
+                    break;
+
+                case "blue-yellow":
+                case "yellow-blue":
+                    document.getElementById("output").style.backgroundColor = "green";
+                    break;
+                case "red-yellow":
+                case "yellow-red": 
+                     document.getElementById("output").style.backgroundColor = "#FF4F00";
+                    break;
+                default: 
+                     document.getElementById("output").innerText="invalid color";
+                    
+
+            }
+        }
+    </script>
+</body>
+
+</html>
