@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>capitalization</title>
+    </head>
+    <style>
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* margin-top: 50px; */
+            border: dotted;
+            border-color: blueviolet;
+            width: 400px;
+            margin: auto;
+            }
+            input{
+                width: 200px;
+                margin-top: 20px;
+            }
+            button{
+                width: 150px;
+                margin-top: 20px;
+            }
+    </style>
+<body>
+<div>
+    Name:
+    <input type="text" id="name">
+    <button type="submit" onclick="test()" >submit</button>
+    
+
+</div>
+    
+    <script>
+        function test() {
+            let inputElement = document.getElementById("name");
+            let n = inputElement.value;
+            if (n.charAt(0) === n.charAt(0).toLowerCase()) {
+                n= n.charAt(0).toUpperCase() +n.slice(1);
+                inputElement.value=n;
+                }
+   
+        }
+    </script>
+    
+</body>
+</html>
