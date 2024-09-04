@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <style>
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 200px;
+        }
+        p{
+            text-align: center;
+            font-size: 18px;
+
+        }
+
+        .box {
+            margin-bottom: 20px;
+border: none;            padding: 10px;
+            width: 200px;
+        }
+
+        .box img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .cartitem {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+        .total{
+margin-top: 20px;
+        }
+        
+        
+        button{
+            background-color: rgb(91, 204, 91);
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px 15px 10px 15px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        const cartitems = [];
+        const unique = new Set();
+        function addtocart(ele) {
+            const box = ele.closest('.box');
+            const id = box.id;
+            const img = box.querySelector('img').src;
+            const desc = box.querySelector('p').innerText; // Get the first <p> element's text
+            const price = box.querySelectorAll('p')[1].innerText; // Get the second <p> element's text
+
+            const item = document.createElement('div');
+            item.className = 'cartitem';
+            item.innerHTML = `<img src="${img}" style="height:40px"/>
+                <p> Cart Id: ${id}</p>
+                <p>  ${desc}</p>
+                <p> ${price}</p>`
+            const details = document.querySelector('.details')
+            details.appendChild(item)
+            if(!unique.has(id)){
+                unique.add(id)
+            }
+        }
+
+        function showunique(){
+            const unique_items=document.querySelector('.unique')
+            unique_items.innerHTML='';
+            unique.forEach(id => {
+                const box=document.getElementById(id);
+                if(box){
+                    const img=box.querySelector('img').src;
+                    const desc=box.querySelector('p').innerText;
+                    const price=box.querySelectorAll('p')[1].innerText;
+                    const uniquecart=document.createElement('div');
+                    uniquecart.className="uniquecart"
+                    uniquecart.innerHTML = `<img src="${img}" />
+                    <p>Cart Id: ${id}</p>
+                    <p>${desc}</p>
+                    <p>${price}</p>`;
+                    unique_items.appendChild(uniquecart);
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div id="no1" class="box">
+            <img src="./download (1).jpeg" alt="">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>price: 45Rs</p>
+            <button onclick="addtocart(this)" class="cart">Add to Cart</button>
+        </div>
+        <div id="no2" class="box">
+            <img src="./download (2).jpeg" alt="">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>price: 45Rs</p>
+            <button onclick="addtocart(this)" class="cart">Add to Cart</button>
+        </div>
+        <div id="no3" class="box">
+            <img src="./download (3).jpeg" alt="">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>price: 45Rs</p>
+            <button onclick="addtocart(this)" class="cart">Add to Cart</button>
+        </div>
+        <div id="no4" class="box">
+            <img src="download.jpeg" alt="">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>price: 45Rs</p>
+            <button onclick="addtocart(this)" class="cart">Add to Cart</button>
+        </div>
+        <div id="no5" class="box">
+            <img src="./images (1).jpeg" alt="">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>price: 45Rs</p>
+            <button onclick="addtocart(this)" class="cart">Add to Cart</button>
+        </div>
+        <div id="no6" class="box">
+            <img src="./images (2).jpeg" alt="">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>price: 45Rs</p>
+            <button onclick="addtocart(this)" class="cart">Add to Cart</button>
+        </div>
+        <div id="no7" class="box">
+            <img src="./images (3).jpeg" alt="">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>price: 45Rs</p>
+            <button onclick="addtocart(this)" class="cart">Add to Cart</button>
+        </div>
+        <div id="no8" class="box">
+            <img src="./images.jpeg" alt="">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>price: 45Rs</p>
+            <button onclick="addtocart(this)" class="cart">Add to Cart</button>
+        </div>
+    </div>
+    <h2>
+        Your Cart
+    </h2>
+    <div class="details">
+
+    </div>
+    <div class="total">
+        <button onclick="showunique()"> Calculate unique carts</button>
+    </div>
+    <div class="unique"></div>
+</body>
+
+</html>

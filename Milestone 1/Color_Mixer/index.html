@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Mixer</title>
+    <script>
+        function mixer() {
+
+            let col1 = document.getElementById("col1").value;
+            let col2 = document.getElementById("col2").value;
+            let out =document.getElementById("out")
+            switch (`${col1}-${col2}`) {
+
+                case "red-blue":
+                case "blue-red":
+out.style.backgroundColor="purple"                 
+                    break;
+                case "red-yellow":
+                case "yellow-red":
+                out.style.backgroundColor="orange"              
+                break;
+                
+                case "blue-yellow":
+                case "yellow-blue":
+
+                out.style.backgroundColor="green"              
+
+            }
+        }
+    </script>
+    <style>
+        div{
+            height: 40px;
+            width: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="">Color 1</label>
+    <input id="col1" type="text">
+    <label for="">Color 2</label>
+    <input id="col2" type="text">
+    <button id="btn" onclick="mixer()">Mixer</button>
+    <div id="out">
+
+    </div>
+</body>
+
+</html>

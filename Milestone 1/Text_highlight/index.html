@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Long Words</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p id="text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium soluta fugiat sit ducimus vel nulla iste quaerat totam, est adipisci optio! Possimus ratione obcaecati consequatur molestiae quos, porro itaque incidunt. lorem40 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit iste eos ex quod aspernatur vero ducimus ipsum veniam tenetur similique! Fuga minima blanditiis, deleniti dignissimos id consequatur ea cupiditate illum.
+    </p>
+    <script>
+        const textElement = document.getElementById('text');
+        const words = textElement.innerText.split(' ');
+        
+        const highlightedText = words.map(word => {
+            // Remove any punctuation from the word for accurate length check
+            const cleanWord = word.replace(/[.,!?;:]/g, '');
+            return cleanWord.length > 8 ? `<span class="highlight">${word}</span>` : word;
+        }).join(' ');
+
+        textElement.innerHTML = highlightedText;
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Password Validator
+    </title>
+    <script>
+        function validator(){
+
+        
+       let a= document.getElementById("input1").value;
+       let b= document.getElementById("input2").value;
+    if(a===b){
+        console.log("PassWord Mathched")
+    }    
+    else{
+        console.log("Password did'nt match.Password validation unsuccessful")
+    }
+    
+    }
+    </script>
+</head>
+<body>
+    <label for="">Enter Password</label>
+    <input id="input1" type="password">
+    <label for="">Confirm Password</label>
+    <input id="input2"  type="password">
+    <button onclick="validator()" type="submit">Submit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel Counter</title>
+    <script>
+        function vowel(){
+count=0;
+        
+      const str=  document.getElementById("name").value.toLowerCase();
+    Array.from(str).forEach(element => {
+        if(element=="a"){
+            count++;
+        }
+        else if(element=="e"){
+            count++;
+        }
+       else if(element=="i"){
+            count++;
+        }
+       else if(element=="o"){
+            count++;
+        }
+       else if(element=="u"){
+            count++;
+        }
+        
+    });
+console.log(count)    }
+    </script>
+</head>
+<body>
+    <label for="">Name</label>
+    <input id ="name"type="text">
+    <button onclick="vowel()">submit</button>
+</body>
+</html>

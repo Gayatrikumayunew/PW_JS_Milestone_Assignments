@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitaliz</title>
+    <script>
+       function capatilize()
+        {
+
+
+            let first = document.getElementById("first").value;
+            let ans =
+                first.charAt(0).toUpperCase() + first.slice(1);
+            console.log(ans)
+            document.getElementById("first").value=ans;
+        }
+    </script>
+</head>
+
+<body>
+    <label  for="">Name</label>
+    <input id="first" type="text" name="" id="">
+    <label for="">class</label>
+    <input type="number" name="" id="">
+    <label for="">subject</label>
+    <input type="text">
+    <button onclick="capatilize()">submit</button>
+</body>
+
+</html>

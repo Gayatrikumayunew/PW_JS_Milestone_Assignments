@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Image with Keyboard</title>
+    <style>
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        #myImage {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 50px;
+            left: 50px;
+            transition: top 0.1s, left 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="myImage" src="./download.png" alt="Movable Image">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const image = document.getElementById('myImage');
+            let top = parseInt(window.getComputedStyle(image).top, 10);
+            let left = parseInt(window.getComputedStyle(image).left, 10);
+            const step = 10; // Number of pixels to move
+
+            document.addEventListener('keydown', function(event) {
+                switch(event.key) {
+                    case 'ArrowUp':
+                        top -= step;
+                        break;
+                    case 'ArrowDown':
+                        top += step;
+                        break;
+                    case 'ArrowLeft':
+                        left -= step;
+                        break;
+                    case 'ArrowRight':
+                        left += step;
+                        break;
+                }
+                // Update image position
+                image.style.top = `${top}px`;
+                image.style.left = `${left}px`;
+            });
+        });
+    </script>
+</body>
+</html>

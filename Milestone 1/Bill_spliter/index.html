@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+      
+        function costfind(dish, num) {
+            let total = (dish * num)
+        let each = (total / num)
+
+            let ans = {
+                total: total,
+                each: each
+            }
+            return ans
+        }
+        console.log(costfind(1000, 2))
+    </script>
+</body>
+
+</html>

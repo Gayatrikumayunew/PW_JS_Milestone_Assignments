@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change(){
+            if(
+           document.getElementById("text").innerText==="The Most affordable Learning Platform"){
+            document.getElementById("text").innerText="PW"
+
+           }
+          else if(           document.getElementById("text").innerText==="PW")
+            {
+            document.getElementById("text").innerText="The Most affordable Learning Platform"
+
+
+           }
+
+
+
+        }
+    </script>
+    <style>
+        .main{text-align: center;}
+        button{
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div id="text">
+        The Most affordable Learning Platform
+    </div>
+    <button onclick="change()">Change_Text</button>
+
+</div>
+
+</body>
+</html>

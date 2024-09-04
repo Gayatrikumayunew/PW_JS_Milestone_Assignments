@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Car</title>
+    <script>
+        function calculat(){
+            const days=parseInt(document.getElementById("num").value);
+            const type=document.getElementById("type").value;
+            let ans=0;
+            if(type=="Economy"){
+                ans=days*4000;
+                document.getElementById("result").innerText = `Total cost: ${ans}`;
+
+            }
+            else if(type=="Midsize"){
+                ans=days*10000;
+                document.getElementById("result").innerText = `Total cost: ${ans}`;
+
+            }else if(type=="Luxury"){
+                ans=days*20000;
+            
+            document.getElementById("result").innerText = `Total cost: ${ans}`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="">Number of days</label>
+    <input type="number" name="" id="num">
+    <label for="">car</label>
+    <input id="type" type="text">
+    <button onclick="calculat()">Calculate</button>
+    <div id="result">
+
+    </div>
+</body>
+</html>

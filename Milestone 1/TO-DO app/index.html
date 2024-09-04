@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .navbar{
+            display: flex;
+            background-color: #162C17;
+            height: 50px;
+            column-gap: 10px;
+        }
+        .navbar h1{
+            color: #cfff45;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar input{
+            width: 30px;
+            background-color: white;
+            color: black;
+        }
+        .field{
+            background-color: #7EAc01;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .field input{
+            height: 40px;
+            margin: 10px;
+            width: 400px;
+            font-size: 18px;
+        }
+        .field button{
+            width: 40px;
+            height: 42px;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .todos{
+            height: 100vh;
+            
+
+}
+.sect{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #91d686;
+
+}
+        .todo{
+            background-color: white;
+            height: 40px;
+            width: 400px;
+
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+
+
+        }
+        .todo input{
+            width: 40px;
+            height: 30px;
+        }
+    </style>
+    <script>
+        function addtodo(){
+        let inputval=document.getElementById("todoval");
+        let texttodo=inputval.value.trim()
+        if(texttodo===""){
+            alert("Please Enter a TODO")
+            return;
+        }
+        let container=document.getElementById("todocontainer")
+        let divtodo=document.createElement('div');
+        divtodo.className="todo"
+        let checkbox=document.createElement('input')
+        checkbox.type='checkbox'
+        var textnode=document.createTextNode(texttodo)
+        divtodo.appendChild(checkbox)
+        divtodo.appendChild(textnode)
+        container.appendChild(divtodo)
+        inputval.value=""
+
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+    <div class="navbar">
+        <input checked type="checkbox" name="" id="">
+    <h1>TO-DO</h1></div>
+    <div class="field">
+        <input id="todoval" type="text" autocomplete="off" placeholder="Enter Your TODO...">
+        <button id="add" onclick="addtodo()">+</button>
+    </div>
+    <div class="sect">    <div class="todos" id="todocontainer">
+    </div></div>
+
+</div>
+</body>
+</html>

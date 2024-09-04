@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conerter</title>
+    <style>
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        label{
+            font-size: 28px;
+            font-weight: 600;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 20px;
+
+        }
+        input{
+width: 200px;
+height: 40px;
+border: none;
+background: lightblue;
+margin: 20px;
+        }
+        button{
+            color: #000;
+            background-color: rgb(232, 75, 230);
+            border: none;
+            padding: 8px 10px 8px 10px;
+            width: 150px;
+            height: 45px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function converter(){
+            const num1=document.getElementById("cel").value;
+            const f=(1.8*num1)+32;
+            document.getElementById("fah").value=f.toFixed(2)
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+    <label for="">Celcius</label>
+    <input id="cel" type="number">
+    <button onclick="converter()">Convert</button>
+    <label for="">Fahremheit</label>
+    <input type="number" name="" id="fah">
+</div>
+</body>
+</html>

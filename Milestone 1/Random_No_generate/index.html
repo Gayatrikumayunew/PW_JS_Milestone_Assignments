@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="random"></div>
+
+    <script>
+        let val=Math.floor(Math.random()*101)
+        let newdiv=document.createElement('div')
+        newdiv.innerText=val;
+        document.querySelector('.random').appendChild(newdiv)
+    </script>
+</body>
+</html>

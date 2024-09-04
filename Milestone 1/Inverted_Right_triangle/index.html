@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right Angel</title>
+    <script>
+function Print(){
+  const input = parseInt(document.getElementById("input").value);
+  if (isNaN(input) || input <= 0) return; // Check for valid input
+  
+  for(let i = input; i > 0; i--){
+    let line = '';
+    for(let j = 0; j < i; j++){
+        line += '*';
+    }
+    console.log(line);
+  }
+}
+    </script>
+</head>
+<body>
+    <label for="">Input</label>
+    <input id ="input"type="text">
+    <button onclick="Print()">Print</button>
+</body>
+</html>

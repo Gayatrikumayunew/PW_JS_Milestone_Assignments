@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                    let onj={"ram":2000,"shyam":5000,"bittu":0,"hero":5400}
+
+        function deposit(name,amount){
+
+           onj.hasOwnProperty(name)
+           {
+            onj[name]+=amount;
+            return onj[name];
+           }        }
+          const ans= deposit("shyam",5000);
+          console.log(ans)
+
+          function withdraw(name,amount){
+            if(onj.hasOwnProperty(name)){
+                if(onj[name]>amount){
+                    onj[name]-=amount;
+                    return onj[name]
+                }
+            }
+          }
+          const ans1= withdraw("shyam",2000);
+          console.log(ans1)
+
+
+    </script>
+    
+</body>
+</html>
